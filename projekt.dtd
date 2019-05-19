@@ -10,5 +10,5 @@
 
 
 
-<!ATTLIST Ksiazka Stan (Stary|Uzywany|Nowy) "nowy" #REQUIRED >
+<!ATTLIST Ksiazka Stan (Stary|Uzywany|Nowy) #REQUIRED>
 <!ATTLIST Ksiazka Opis NMTOKENS #IMPLIED>

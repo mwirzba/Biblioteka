@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='ISO-8859-2'?>
+<!DOCTYPE glowny SYSTEM "projekt.dtd">
+<Biblioteka>
+	<Ksiazki>
+		<Ksiazka Stan='Nowy'>
+			<Tytul>Ja</Tytul>
+			<Autor>He</Autor>
+		</Ksiazka>
+	</Ksiazki>
+	
+	<Pracownicy>
+
+	</Pracownicy>
+</Biblioteka>
