@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!ELEMENT Biblioteka ((Ksiazki,Pracownicy))>
 <!ELEMENT Ksiazki (Ksiazka+)>
-<!ELEMENT Ksiazka (Tytuł,Autor+,Kategoria*,Opinia*)>
+<!ELEMENT Ksiazka (Tytuł,Autor+,Kategoria*,Opinia*,JestDostepna?)>
 
 <!ELEMENT Tytuł (#PCDATA)>
 <!ELEMENT Autor (#PCDATA)>
 <!ELEMENT Kategoria (#PCDATA)>
-<!ELEMENT Opinia ANY>
+<!ELEMENT Opinia (Tekst,Login?)>
+<!ELEMENT JestDostepna EMPTY>
 
+
+<!ELEMENT Tekst Any>
+<!ELEMENT Login (#PCDATA)>
 
 
 <!ATTLIST Ksiazka Stan (Stary|Uzywany|Nowy) #REQUIRED>
 <!ATTLIST Ksiazka Opis NMTOKENS #IMPLIED>
+<!ATTLIST Ksiazka Id_Ksiazka ID #REQUIRED>
+<!ATTLIST Ksiazka Typ CDATA #FIXED "Papierowa">
+

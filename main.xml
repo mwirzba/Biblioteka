@@ -9,6 +9,17 @@
 	</Ksiazki>
 	
 	<Pracownicy>
-
+        <Pracownik>
+            <Imie></Imie>
+            <Nazwisko></Nazwisko>
+            <Email></Email>
+        </Pracownik>
 	</Pracownicy>
+
+    <Dostawcy>
+            <Dostawca>
+                <Nazwa></Nazwa>
+            <Dostawca>
+    <Dostawcy>
+
 </Biblioteka>
