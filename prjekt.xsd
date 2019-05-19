@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT Biblioteka ((Ksiazki,Pracownicy))>
+<!ELEMENT Ksiazki (Ksiazka+)>
+<!ELEMENT Ksiazka (Tytuł,Autor+,Kategoria*,Opinia*)>
+
+<!ELEMENT Tytuł (#PCDATA)>
+<!ELEMENT Autor (#PCDATA)>
+<!ELEMENT Kategoria (#PCDATA)>
+<!ELEMENT Opinia ANY>
+
+
+
+<!ATTLIST Ksiazka Stan (Stary|Uzywany|Nowy) "nowy" #REQUIRED >
+<!ATTLIST Ksiazka Opis NMTOKENS #IMPLIED>
