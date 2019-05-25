@@ -11,7 +11,10 @@
 		<xs:field xpath="@Id_Author"/>
 	</xs:keyref>
 
-
+	<xs:unique name="PeselUnique"> 
+		<xs:selector xpath="./Employees/Employee"/>
+		<xs:field xpath="Pesel"/>
+	</xs:unique>
 
 	</xs:element>
 		
@@ -37,12 +40,17 @@
 		<xs:sequence>
 			<xs:element name="Title" type="TitleValues" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="Category" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="ReleaseDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
-		<xs:attribute name="State" type="StateValues" default="New"/>
-		<xs:attribute name="Description"  type="xs:string" use="optional"/>
+		<xs:attributeGroup ref="bookAtr"/>
+	</xs:complexType>
+
+	<xs:attributeGroup name="bookAtr">
+  		<xs:attribute name="State" type="StateValues" default="New"/>
+		<xs:attribute name="Description"  type="xs:normalizedString" use="optional"/>
 		<xs:attribute name="Id_Author"  type="xs:string" use="required"/>
 		<xs:attribute name="Type"  type="xs:string" fixed="Papier"/>
-	</xs:complexType>
+	</xs:attributeGroup>
 
 
 	<xs:complexType name="authorsType">
@@ -50,6 +58,7 @@
 			<xs:element name="Author" type="authorType" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
+
 
 
 	<xs:complexType name="authorType">
@@ -71,6 +80,8 @@
 			<xs:element name="Name" type="xs:string"/>
 			<xs:element name="Surname" type="xs:string"/>
 			<xs:element name="Salary" type="SalaryValues"/>
+			<xs:element name="Bonus" type="BonusValues"/>
+			<xs:element name="Email" type="EmailValues"/>
 			<xs:element name="Pesel" type="PeselValues" minOccurs="0"/>			
 		</xs:sequence>
 	</xs:complexType>
@@ -104,17 +115,17 @@
 		<xs:sequence>
 			<xs:element name="City" type="xs:string"/>
 			<xs:element name="Street" type="xs:string"/>
-			<xs:element name="Number" type="xs:positiveInteger"/>
+			<xs:element name="Number" type="xs:int"/>
 		</xs:sequence>
 	</xs:complexType>
 
 
 	<xs:simpleType name="StateValues">
-                <xs:restriction base="xs:string">
-					<xs:enumeration value="New"/>
-					<xs:enumeration value="Used"/>
-				<xs:enumeration value="Old"/>
-			</xs:restriction>
+        <xs:restriction base="xs:string">
+			<xs:enumeration value="New"/>
+			<xs:enumeration value="Used"/>
+			<xs:enumeration value="Old"/>
+		</xs:restriction>
     </xs:simpleType>
 
 
@@ -135,6 +146,19 @@
             <xs:restriction base="xs:double">
 				<xs:minExclusive value="2500"/>
  				<xs:maxExclusive value="10000"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="BonusValues">
+            <xs:restriction base="xs:nonNegativeInteger">
+				<xs:minInclusive value="0"/>
+ 				<xs:maxInclusive value="1000"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="EmailValues">
+            <xs:restriction base="xs:string">
+				<xs:pattern value="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"/>
 			</xs:restriction>
     </xs:simpleType>
 

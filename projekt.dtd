@@ -13,22 +13,26 @@
 <!ELEMENT Supplier ((Company_Name | Person_Name),Address)*>
 
 
-<!ELEMENT Employee (%Personal_Data;,Salary,Pesel?)>
-<!ELEMENT Book (Title,Category+)>
+<!ELEMENT Employee (%Personal_Data;,Salary,Bonus,Email,Pesel?)>
+<!ELEMENT Book (Title,Category+,ReleaseDate)>
 <!ELEMENT Author (%Personal_Data;)>
 <!ELEMENT Address (City,Street,Number)>
 <!ELEMENT Person_Name (%Personal_Data;)>
 
 <!ELEMENT Salary %PC;>
+<!ELEMENT Bonus %PC;>
 <!ELEMENT Company_Name %PC;>
+<!ELEMENT Email %PC;>
 <!ELEMENT City %PC;>
 <!ELEMENT Street %PC;>
 <!ELEMENT Number %PC;>
 
 
+
 <!ELEMENT OpenDays %PC;>
 <!ELEMENT Title %PC;>
 <!ELEMENT Category  %PC;>
+<!ELEMENT ReleaseDate %PC;>
 
 <!ELEMENT Name  %PC;>
 <!ELEMENT Surname  %PC;>

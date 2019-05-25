@@ -6,6 +6,7 @@
         <Book State="New"  Id_Author="A1">
             <Title>d</Title>
             <Category></Category>
+            <ReleaseDate>2007-09-24</ReleaseDate> 
         </Book>
     </Books>
     <Authors>
@@ -19,6 +20,8 @@
             <Name></Name>
             <Surname></Surname>
             <Salary>3400</Salary>
+            <Bonus>300</Bonus>
+            <Email>jwojciehc45@gmail.com</Email>
             <Pesel>98765478630</Pesel>
         </Employee>
     </Employees>
