@@ -1,25 +1,31 @@
 <?xml version='1.0' encoding='ISO-8859-2'?>
-<!DOCTYPE glowny SYSTEM "projekt.dtd">
-<Biblioteka>
-	<Ksiazki>
-		<Ksiazka Stan='Nowy'>
-			<Tytul>Ja</Tytul>
-			<Autor>He</Autor>
-		</Ksiazka>
-	</Ksiazki>
-	
-	<Pracownicy>
-        <Pracownik>
-            <Imie></Imie>
-            <Nazwisko></Nazwisko>
-            <Email></Email>
-        </Pracownik>
-	</Pracownicy>
-
-    <Dostawcy>
-            <Dostawca>
-                <Nazwa></Nazwa>
-            <Dostawca>
-    <Dostawcy>
-
-</Biblioteka>
+<!DOCTYPE Library SYSTEM "projekt.dtd">
+<Library>
+    <Books>
+        <Book State="New"  Id_Author="A1">
+            <Title>d</Title>
+            <Category></Category>
+        </Book>
+        <Author Id="A1">
+            <Name></Name>
+            <Surname></Surname>
+        </Author>
+    </Books>
+    <Employees>
+        <Employee>
+            <Name></Name>
+            <Surname></Surname>
+            <Pesel></Pesel>
+        </Employee>
+    </Employees>
+    <Suppliers>
+        <Supplier>
+            <Company_Name></Company_Name>
+            <Address>
+                <City></City>
+                <Street></Street>
+                <Number></Number>
+            </Address>
+        </Supplier>
+    </Suppliers>
+</Library>

@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!ELEMENT Biblioteka ((Ksiazki,Pracownicy))>
-<!ELEMENT Ksiazki (Ksiazka+)>
-<!ELEMENT Ksiazka (Tytuł,Autor+,Kategoria*,Opinia*,JestDostepna?)>
 
-<!ELEMENT Tytuł (#PCDATA)>
-<!ELEMENT Autor (#PCDATA)>
-<!ELEMENT Kategoria (#PCDATA)>
-<!ELEMENT Opinia (Tekst,Login?)>
-<!ELEMENT JestDostepna EMPTY>
+<!ENTITY % Personal_Data "Name, Surname"> 
+<!ENTITY % PC "(#PCDATA)">
 
 
-<!ELEMENT Tekst Any>
-<!ELEMENT Login (#PCDATA)>
+
+<!ELEMENT Library ((Books,Employees,Suppliers))>
+<!ELEMENT Books (Book,Author)+>
+<!ELEMENT Employees (Employees*)>
+<!ELEMENT Suppliers (Supplier*)>
+<!ELEMENT Supplier ((Company_Name | Person_Name),Address)*>
 
 
-<!ATTLIST Ksiazka Stan (Stary|Uzywany|Nowy) #REQUIRED>
-<!ATTLIST Ksiazka Opis NMTOKENS #IMPLIED>
-<!ATTLIST Ksiazka Id_Ksiazka ID #REQUIRED>
-<!ATTLIST Ksiazka Typ CDATA #FIXED "Papierowa">
 
+
+<!ELEMENT Employee (%Personal_Data;,Pesel)>
+<!ELEMENT Book (Title,Category+,Opinion*)>
+<!ELEMENT Author (%Personal_Data;)>
+<!ELEMENT Address (City,Street,Number)>
+<!ELEMENT Person_Name (%Personal_Data;)>
+
+<!ELEMENT Company_Name CDATA>
+<!ELEMENT City CDATA>
+<!ELEMENT Street CDATA>
+<!ELEMENT Number CDATA>
+
+
+
+<!ELEMENT Title %PC;>
+<!ELEMENT Category  %PC;>
+<!ELEMENT Opinion (Text,Login?)>
+<!ELEMENT Name  %PC;>
+<!ELEMENT Surname  %PC;>
+<!ELEMENT Pesel  %PC;>
+
+<!ELEMENT Text  %PC;>
+<!ELEMENT Login  %PC;>
+
+
+<!ATTLIST Book State (New|Used|Old) #REQUIRED>
+<!ATTLIST Book Description NMTOKENS #IMPLIED>
+<!ATTLIST Book Id_Author IDREFS #REQUIRED>
+<!ATTLIST Book Type CDATA #FIXED "Paper">
+<!ATTLIST Author Id ID #REQUIRED>
