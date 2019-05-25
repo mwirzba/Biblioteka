@@ -1,0 +1,145 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Library" type="libraryType">
+
+	<xs:key name="Id_AuthorKey">
+		<xs:selector xpath="./Authors/Author"/>
+		<xs:field xpath="@Id" />
+	</xs:key>
+
+	<xs:keyref name="Id_AuthorKeyRef" refer="Id_AuthorKey">
+		<xs:selector xpath="./Books/Book"/>
+		<xs:field xpath="@Id_Author"/>
+	</xs:keyref>
+
+
+
+	</xs:element>
+		
+	<xs:complexType name="libraryType">
+			<xs:sequence>
+				<xs:sequence>
+					<xs:element name="OpenDays" type="OpenDaysList"/>
+					<xs:element name="Books" type="booksType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Authors" type="authorsType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Employees" type="employeesType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="Suppliers" type="suppliersType" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="booksType">
+		<xs:sequence>
+			<xs:element name="Book" type="bookType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="bookType">
+		<xs:sequence>
+			<xs:element name="Title" type="TitleValues" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Category" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="State" type="StateValues" default="New"/>
+		<xs:attribute name="Description"  type="xs:string" use="optional"/>
+		<xs:attribute name="Id_Author"  type="xs:string" use="required"/>
+		<xs:attribute name="Type"  type="xs:string" fixed="Papier"/>
+	</xs:complexType>
+
+
+	<xs:complexType name="authorsType">
+		<xs:sequence>
+			<xs:element name="Author" type="authorType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Surname" type="xs:string"/>			
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="employeesType">
+		<xs:sequence>
+			<xs:element name="Employee" type="employeeType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="employeeType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Surname" type="xs:string"/>
+			<xs:element name="Salary" type="SalaryValues"/>
+			<xs:element name="Pesel" type="PeselValues" minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="suppliersType">
+		<xs:sequence>
+			<xs:element name="Supplier" type="supplierType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="supplierType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="Company_Name" type="xs:string"/>
+				<xs:element ref="person_data"/>
+			</xs:choice>
+			<xs:element name="Address" type="addressType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	 <xs:element name="person_data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="Name"/>
+                <xs:element type="xs:string" name="Surname"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element name="City" type="xs:string"/>
+			<xs:element name="Street" type="xs:string"/>
+			<xs:element name="Number" type="xs:positiveInteger"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="StateValues">
+                <xs:restriction base="xs:string">
+					<xs:enumeration value="New"/>
+					<xs:enumeration value="Used"/>
+				<xs:enumeration value="Old"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+
+	<xs:simpleType name="PeselValues">
+            <xs:restriction base="xs:positiveInteger">
+				<xs:totalDigits value="11"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="TitleValues">
+            <xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+ 				<xs:maxLength value="40"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="SalaryValues">
+            <xs:restriction base="xs:double">
+				<xs:minExclusive value="2500"/>
+ 				<xs:maxExclusive value="10000"/>
+			</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="OpenDaysList">
+			<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+
+</xs:schema>

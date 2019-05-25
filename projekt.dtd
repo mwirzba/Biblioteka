@@ -5,40 +5,37 @@
 
 
 
-<!ELEMENT Library ((Books,Employees,Suppliers))>
-<!ELEMENT Books (Book,Author)+>
-<!ELEMENT Employees (Employees*)>
+<!ELEMENT Library ((OpenDays,Books,Authors,Employees,Suppliers))>
+<!ELEMENT Books (Book)+>
+<!ELEMENT Authors (Author)+>
+<!ELEMENT Employees (Employee*)>
 <!ELEMENT Suppliers (Supplier*)>
 <!ELEMENT Supplier ((Company_Name | Person_Name),Address)*>
 
 
-
-
-<!ELEMENT Employee (%Personal_Data;,Pesel)>
-<!ELEMENT Book (Title,Category+,Opinion*)>
+<!ELEMENT Employee (%Personal_Data;,Salary,Pesel?)>
+<!ELEMENT Book (Title,Category+)>
 <!ELEMENT Author (%Personal_Data;)>
 <!ELEMENT Address (City,Street,Number)>
 <!ELEMENT Person_Name (%Personal_Data;)>
 
-<!ELEMENT Company_Name CDATA>
-<!ELEMENT City CDATA>
-<!ELEMENT Street CDATA>
-<!ELEMENT Number CDATA>
+<!ELEMENT Salary %PC;>
+<!ELEMENT Company_Name %PC;>
+<!ELEMENT City %PC;>
+<!ELEMENT Street %PC;>
+<!ELEMENT Number %PC;>
 
 
-
+<!ELEMENT OpenDays %PC;>
 <!ELEMENT Title %PC;>
 <!ELEMENT Category  %PC;>
-<!ELEMENT Opinion (Text,Login?)>
+
 <!ELEMENT Name  %PC;>
 <!ELEMENT Surname  %PC;>
 <!ELEMENT Pesel  %PC;>
 
-<!ELEMENT Text  %PC;>
-<!ELEMENT Login  %PC;>
 
-
-<!ATTLIST Book State (New|Used|Old) #REQUIRED>
+<!ATTLIST Book State (New|Used|Old) "New">
 <!ATTLIST Book Description NMTOKENS #IMPLIED>
 <!ATTLIST Book Id_Author IDREFS #REQUIRED>
 <!ATTLIST Book Type CDATA #FIXED "Paper">

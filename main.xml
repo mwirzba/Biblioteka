@@ -1,21 +1,25 @@
 <?xml version='1.0' encoding='ISO-8859-2'?>
 <!DOCTYPE Library SYSTEM "projekt.dtd">
 <Library>
+    <OpenDays>Monday Thuesday</OpenDays>
     <Books>
         <Book State="New"  Id_Author="A1">
             <Title>d</Title>
             <Category></Category>
         </Book>
+    </Books>
+    <Authors>
         <Author Id="A1">
             <Name></Name>
             <Surname></Surname>
         </Author>
-    </Books>
+    </Authors>
     <Employees>
         <Employee>
             <Name></Name>
             <Surname></Surname>
-            <Pesel></Pesel>
+            <Salary>3400</Salary>
+            <Pesel>98765478630</Pesel>
         </Employee>
     </Employees>
     <Suppliers>
@@ -24,7 +28,7 @@
             <Address>
                 <City></City>
                 <Street></Street>
-                <Number></Number>
+                <Number>27</Number>
             </Address>
         </Supplier>
     </Suppliers>
