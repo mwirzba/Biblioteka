@@ -32,14 +32,14 @@
 
 	<xs:complexType name="booksType">
 		<xs:sequence>
-			<xs:element name="Book" type="bookType" minOccurs="1" maxOccurs="unbounded"/>
+		    <xs:element name="Book" type="bookType" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="bookType">
 		<xs:sequence>
 			<xs:element name="Title" type="TitleValues" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Category" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Category" type="xs:string" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="ReleaseDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="bookAtr"/>
@@ -96,13 +96,13 @@
 		<xs:sequence>
 			<xs:choice>
 				<xs:element name="Company_Name" type="xs:string"/>
-				<xs:element ref="person_data"/>
+				<xs:element ref="Person_Name"/>
 			</xs:choice>
 			<xs:element name="Address" type="addressType"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	 <xs:element name="person_data">
+	 <xs:element name="Person_Name">
         <xs:complexType>
             <xs:sequence>
                 <xs:element type="xs:string" name="Name"/>
