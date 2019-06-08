@@ -1,0 +1,188 @@
+Library{
+	background-color:aliceblue;
+}
+
+Library {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #F0F8FF;
+  }
+  100% {
+    background-color: #F5F5DC;
+  }
+}
+
+Library:before{
+	content:"Library Siple Database";
+	display:block;
+	.padding .1em .25em;
+	text-align: center;
+	font-size:60px;
+}
+
+
+
+Books:Before {
+    padding: 10px;
+    content:"Books";
+	text-align:"center";
+	font-size:40px;
+}
+OpenDays:before{
+	content:"Open Days: ";
+	font-size:25px;
+	margin-left:30px;
+	text-shadow: 2px 2px #808080;
+}
+OpenDays{
+   transition: color 0.5s ease;
+   color: black;
+}
+OpenDays:hover{
+	color:green;
+}
+Books {
+	display: block;
+    padding: 10px;
+    margin-top: 20px;
+	width:500px;
+    border: 2px solid black;
+	margin-left:30px;
+}
+
+Book {
+	display: block;
+    margin-top: 20px;
+    border: 2px solid black;
+	
+}
+
+Authors:Before {
+	 padding: 10px;
+    content:"Authors";
+	text-align:"center";
+	font-size:40px;
+}
+
+Books {
+	counter-reset: my-badass-counter;
+}
+Books Book:before {
+	content: counter(my-badass-counter);
+	counter-increment: my-badass-counter;
+}
+
+Authors {
+	display: block;
+    padding: 10px;
+    margin-top: 20px;
+	width:500px;
+    border: 2px solid black;
+	position: relative;
+	left: 570px;
+	top:-355px;
+}
+Author {
+	display: block;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+Employees:Before {
+	 padding: 10px;
+    content:"Employees";
+	text-align:"center";
+	font-size:40px;
+}
+Employees {
+	display: block;
+    padding: 10px;
+    margin-top: 20px;
+	width:500px;
+    border: 2px solid black;
+	position: relative;
+	left: 30px;
+	top:-230px;
+}
+Employee {
+	display: block;
+    margin-top: 20px;
+    border: 2px solid black;
+	cursor: wait;
+}
+Suppliers:Before {
+	 padding: 10px;
+    content:"Suppliers";
+	text-align:"center";
+	font-size:40px;
+}
+
+Suppliers {
+	display: block;
+    padding: 10px;
+    margin-top: 20px;
+	width:500px;
+    border: 2px solid black;
+	position: relative;
+	left: 570px;
+	top:-530px;
+}
+Supplier {
+	display: block;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+Supplier:hover {
+    background-color: GreenYellow ;
+} 
+
+Book[Id_Author="A1"]{
+	background-color:LawnGreen;
+}
+Book[Id_Author="A2"]{
+	background-color:LightSteelBlue ;
+}
+
+Book[Id_Author="A3"]{
+	background-color:LightYellow ;
+}
+
+Book[Id_Author="A4"]{
+	background-color:SeaShell ;
+}
+
+Author[Id="A1"]{
+	background-color:LawnGreen;
+}
+Author[Id="A2"]{
+	background-color:LightSteelBlue ;
+}
+
+Author[Id="A3"]{
+	background-color:LightYellow ;
+}
+
+Author[Id="A4"]{
+	background-color:SeaShell ;
+}
+
+
+
+Book[State="Used"] ReleaseDate::after{
+	content: url('used.png');
+	margin-left: 10px;
+}
+
+Book[State="New"] ReleaseDate::after{
+	content: url('new.png');	
+	margin-left: 10px;
+}
+
+Book[State="Old"] ReleaseDate::after{
+	content: url('old.jpg');
+	margin-left: 10px;
+}

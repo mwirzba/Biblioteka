@@ -1,0 +1,10 @@
+Library{
+		background-color:alice-blue;
+}
+
+Library:before{
+	content:"Library Siple Database"
+	display:block;
+	.padding .1em .25em;
+	text-align: center;
+}
