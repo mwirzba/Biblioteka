@@ -57,7 +57,7 @@ Book {
 	display: block;
     margin-top: 20px;
     border: 2px solid black;
-	
+	width: calc(100%-350px);
 }
 
 Authors:Before {
@@ -68,11 +68,11 @@ Authors:Before {
 }
 
 Books {
-	counter-reset: my-badass-counter;
+	counter-reset: counter;
 }
 Books Book:before {
-	content: counter(my-badass-counter);
-	counter-increment: my-badass-counter;
+	content: counter(counter);
+	counter-increment: counter;
 }
 
 Authors {
@@ -88,7 +88,9 @@ Authors {
 Author {
 	display: block;
     margin-top: 20px;
+	border-radius:40px;
     border: 2px solid black;
+	text-align: center
 }
 
 Employees:Before {
@@ -175,6 +177,7 @@ Author[Id="A4"]{
 Book[State="Used"] ReleaseDate::after{
 	content: url('used.png');
 	margin-left: 10px;
+	align: right;
 }
 
 Book[State="New"] ReleaseDate::after{
