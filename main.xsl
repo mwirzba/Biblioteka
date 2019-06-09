@@ -88,11 +88,15 @@
             <th>Email</th>
         </tr>
      
+	    <xsl:key name = "name" match = "Library/Employees/Employee" use = "name"/>
 	     <xsl:for-each select="Library/Employees/Employee">
 	        <xsl:sort select="concat(Name,Surname)"/>
 				    <tr>
+					<xsl:attribute name="Pesel">
+							<xsl:value-of select="Pesel" />
+					</xsl:attribute>
 					    <td>
-						    <xsl:value-of select="Name"/>
+						    <xsl:value-of select="name"/>
 						</td>
                         <td>
                             <xsl:value-of select="Surname"/>
