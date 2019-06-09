@@ -1,0 +1,31 @@
+﻿<Window x:Class="XML_Operations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XML_Operations"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" >
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}" x:Key="clear">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Text" Value="{x:Null}"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>
+    <Grid Loaded="Window_Loaded">
+        <Button Content="Show Employees" HorizontalAlignment="Left" Margin="36,141,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.537,0.198"  Click="ShowEmployees"/>
+        <Button Content="Show books" HorizontalAlignment="Left" Height="20" Margin="36,25,0,0" VerticalAlignment="Top" Width="139" Click="ShowBooks"/>
+        <Button Content="Add Employee" HorizontalAlignment="Left" Margin="36,166,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.537,0.198" Click="AddEmployee"/>
+        <Button Content="Add Book" HorizontalAlignment="Left" Margin="36,50,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.537,0.198" Click="AddBook"/>
+        <Grid x:Name="mainGrid" HorizontalAlignment="Left" Height="350" Margin="211,33,0,0" VerticalAlignment="Top" Width="550"/>
+        <Button Content="Edit"  HorizontalAlignment="Left" Margin="36,308,0,0" VerticalAlignment="Top" Width="139" Click="EditEmployee"/>
+        <TextBox x:Name="empName" Style="{StaticResource clear}" HorizontalAlignment="Left" Height="23" Margin="36,249,0,0" TextWrapping="Wrap" Text="Employee Name" VerticalAlignment="Top" Width="139"/>
+        <TextBox  x:Name="empSurName" Style="{StaticResource clear}" HorizontalAlignment="Left" Height="23" Margin="36,280,0,0" TextWrapping="Wrap" Text="Employee Surname" VerticalAlignment="Top" Width="139"/>
+        <Label Content="Edit Employee" HorizontalAlignment="Left" Margin="36,218,0,0" VerticalAlignment="Top" Width="138"/>
+    </Grid>
+</Window>

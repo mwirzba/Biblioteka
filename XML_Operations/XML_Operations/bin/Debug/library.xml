@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<Library>
+  <OpenDays>Monday Thuesday</OpenDays>
+  <Books>
+    <Book State="New" Id_Author="A1">
+      <Title>Harry Potter The Philosopher's Stone</Title>
+      <Category>Fantazy</Category>
+      <ReleaseDate>1997-09-24</ReleaseDate>
+    </Book>
+    <Book State="Old" Description="This book is in bad state and needs to be replaced" Id_Author="A1">
+      <Title>Harry Potter The Chamber of Secrets</Title>
+      <Category>Fantazy</Category>
+      <ReleaseDate>1998-09-24</ReleaseDate>
+    </Book>
+    <Book State="Used" Id_Author="A2">
+      <Title>The Sword of Truth Wizard's First Rule</Title>
+      <Category>Fantazy</Category>
+      <ReleaseDate>2007-09-24</ReleaseDate>
+    </Book>
+    <Book State="New" Id_Author="A3">
+      <Title>Metro 2033</Title>
+      <Category>Science Fiction</Category>
+      <ReleaseDate>2007-09-24</ReleaseDate>
+    </Book>
+    <Book State="Used" Id_Author="A4">
+      <Title>Miracle Creek </Title>
+      <Category>Thriller</Category>
+      <ReleaseDate>2011-11-23</ReleaseDate>
+    </Book>
+  </Books>
+  <Authors>
+    <Author Id="A1">
+      <Name>Joanne</Name>
+      <Surname> Rowling</Surname>
+    </Author>
+    <Author Id="A2">
+      <Name>Terry</Name>
+      <Surname>Godkind</Surname>
+    </Author>
+    <Author Id="A3">
+      <Name>Dmitry</Name>
+      <Surname>Glukhovsky</Surname>
+    </Author>
+    <Author Id="A4">
+      <Name>Angie</Name>
+      <Surname> Kim</Surname>
+    </Author>
+  </Authors>
+  <Employees>
+    <Employee>
+      <Name>George</Name>
+      <Surname>Thompson</Surname>
+      <Salary>3700</Salary>
+      <Bonus>100</Bonus>
+      <Email>gthomson@gmail.com</Email>
+      <Pesel>98265414630</Pesel>
+    </Employee>
+    <Employee>
+      <Name>David</Name>
+      <Surname>MaCoxson</Surname>
+      <Salary>6900</Salary>
+      <Bonus>600</Bonus>
+      <Email>davidc@gmail.com</Email>
+      <Pesel>56761478630</Pesel>
+    </Employee>
+    <Employee>
+      <Name>Charles</Name>
+      <Surname>Anderson</Surname>
+      <Salary>2600</Salary>
+      <Bonus>0</Bonus>
+      <Email>charles90@gmail.com</Email>
+      <Pesel>98761278630</Pesel>
+    </Employee>
+    <Employee>
+      <Name>Jackie</Name>
+      <Surname>Palmer</Surname>
+      <Salary>4900</Salary>
+      <Bonus>700</Bonus>
+      <Email>jackiepalmer45@gmail.com</Email>
+    </Employee>
+    <Employee>
+      <Name>James</Name>
+      <Surname>Mason</Surname>
+      <Salary>5400</Salary>
+      <Bonus>300</Bonus>
+      <Email>mohn@gmail.com</Email>
+    </Employee>
+  </Employees>
+  <Suppliers>
+    <Supplier>
+      <Company_Name>Vip Express</Company_Name>
+      <Address>
+        <City>Salem</City>
+        <Street>Mandarin Street</Street>
+        <Number>17</Number>
+      </Address>
+    </Supplier>
+    <Supplier>
+      <Company_Name>Cortex Myx</Company_Name>
+      <Address>
+        <City>Dover</City>
+        <Street>Congress Avenue</Street>
+        <Number>185</Number>
+      </Address>
+    </Supplier>
+    <Supplier>
+      <Company_Name>Speedy Book</Company_Name>
+      <Address>
+        <City>Washington</City>
+        <Street>Grotto Route</Street>
+        <Number>11</Number>
+      </Address>
+    </Supplier>
+    <Supplier>
+      <Person_Name>
+        <Name>Tyler</Name>
+        <Surname>Sutton</Surname>
+      </Person_Name>
+      <Address>
+        <City>Oakland</City>
+        <Street>Law Lane</Street>
+        <Number>421</Number>
+      </Address>
+    </Supplier>
+    <Supplier>
+      <Person_Name>
+        <Name>Robert</Name>
+        <Surname>Matos</Surname>
+      </Person_Name>
+      <Address>
+        <City>Dover</City>
+        <Street>Palm Street</Street>
+        <Number>146</Number>
+      </Address>
+    </Supplier>
+  </Suppliers>
+</Library>

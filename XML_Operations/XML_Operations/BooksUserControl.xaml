@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="XML_Operations.BooksUserControll"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XML_Operations"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <Grid>
+        <ListView ItemsSource="{Binding booksViewListData}" HorizontalAlignment="Left" Height="350" VerticalAlignment="Top" Width="500">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Path=Title}"/>
+                    <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Path=Category}"/>
+                    <GridViewColumn Header="ReleaseDate" DisplayMemberBinding="{Binding Path=ReleaseDate, StringFormat=dd-MM-yyyy}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</UserControl>

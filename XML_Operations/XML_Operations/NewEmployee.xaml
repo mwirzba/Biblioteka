@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="XML_Operations.NewEmployee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XML_Operations"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <Grid>
+        <WrapPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label Content="Employee Informations" Margin="10 10 0 0"/>
+                <Label Content="Name"  Margin="10 10 0 0"/>
+                <TextBox x:Name="nameBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Label Content="Surname" Margin="10 10 0 0"/>
+                <TextBox x:Name="surnameBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Label Content="Salary" Margin="10 10 0 0"/>
+                <TextBox x:Name="salaryBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Label x:Name="userMessage" Content="" HorizontalAlignment="Left" Margin="10 20 0 0" Width="200"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Label Content="Bonus"  Margin="10 46 0 0"/>
+                <TextBox x:Name="bonusBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Label Content="Email" Margin="10 10 0 0"/>
+                <TextBox x:Name="emailBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Label Content="Pesel" Margin="10 10 0 0"/>
+                <TextBox x:Name="peselBox" Width="200" HorizontalAlignment="Left" Margin="10 10 0 0"/>
+                <Button Content="Add" Width="45" Height="25" HorizontalAlignment="Right" Margin="10 20 0 0" Click="AddNewEmployee"/>
+                
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</UserControl>
